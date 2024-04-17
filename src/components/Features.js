@@ -45,7 +45,25 @@ export default function Features() {
 
   const handleItemClick = (index) => {
     setSelectedItemIndex(index);
+
   };
+
+  const renderMessage = () => {
+
+
+      return (<>
+              <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ mt: 2, textAlign: 'center' }}
+              >
+                  {selectedItemIndex}
+              </Typography>
+
+
+          </>
+    );
+  }
 
   const selectedFeature = items[selectedItemIndex];
 
@@ -263,7 +281,9 @@ export default function Features() {
                     ? items[selectedItemIndex].imageLight
                     : items[selectedItemIndex].imageDark,
               }}
-            />
+            >
+                {renderMessage()}
+            </Box>
           </Card>
         </Grid>
       </Grid>
