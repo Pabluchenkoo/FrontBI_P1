@@ -33,7 +33,7 @@ export default function Hero() {
       complete: async function (results) {
         try {
           const response = await axios.post(
-            "http://localhost:8000/upload-csv",
+            "http://34.16.217.167:8000/upload-csv",
             formData,
             {
               headers: {
@@ -60,7 +60,7 @@ export default function Hero() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:8000/predict", {
+      const response = await axios.post("http://34.16.217.167:8000/predict", {
         Review: review,
       });
 
@@ -203,6 +203,7 @@ export default function Hero() {
         {isLoading ? (
           <div style={{marginTop: 50}}>
           <CircularProgress />
+            This might take 2-3 minutes
           </div>
         ) : (
           <Box
